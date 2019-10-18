@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BABC4385235A2EE900D6EDDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC4384235A2EE900D6EDDB /* AppDelegate.swift */; };
+		BABC4387235A2EE900D6EDDB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BABC4386235A2EE900D6EDDB /* GameScene.sks */; };
+		BABC4389235A2EE900D6EDDB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BABC4388235A2EE900D6EDDB /* Actions.sks */; };
+		BABC438B235A2EE900D6EDDB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC438A235A2EE900D6EDDB /* GameScene.swift */; };
+		BABC438D235A2EE900D6EDDB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC438C235A2EE900D6EDDB /* GameViewController.swift */; };
+		BABC4390235A2EE900D6EDDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABC438E235A2EE900D6EDDB /* Main.storyboard */; };
+		BABC4392235A2EEE00D6EDDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABC4391235A2EEE00D6EDDB /* Assets.xcassets */; };
+		BABC4395235A2EEE00D6EDDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABC4393235A2EEE00D6EDDB /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BABC4381235A2EE900D6EDDB /* RidiculusFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RidiculusFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BABC4384235A2EE900D6EDDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BABC4386235A2EE900D6EDDB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BABC4388235A2EE900D6EDDB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		BABC438A235A2EE900D6EDDB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BABC438C235A2EE900D6EDDB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BABC438F235A2EE900D6EDDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BABC4391235A2EEE00D6EDDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BABC4394235A2EEE00D6EDDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BABC4396235A2EEE00D6EDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BABC437E235A2EE900D6EDDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BABC4378235A2EE900D6EDDB = {
+			isa = PBXGroup;
+			children = (
+				BABC4383235A2EE900D6EDDB /* RidiculusFish */,
+				BABC4382235A2EE900D6EDDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BABC4382235A2EE900D6EDDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BABC4381235A2EE900D6EDDB /* RidiculusFish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BABC4383235A2EE900D6EDDB /* RidiculusFish */ = {
+			isa = PBXGroup;
+			children = (
+				BABC4384235A2EE900D6EDDB /* AppDelegate.swift */,
+				BABC4386235A2EE900D6EDDB /* GameScene.sks */,
+				BABC4388235A2EE900D6EDDB /* Actions.sks */,
+				BABC438A235A2EE900D6EDDB /* GameScene.swift */,
+				BABC438C235A2EE900D6EDDB /* GameViewController.swift */,
+				BABC438E235A2EE900D6EDDB /* Main.storyboard */,
+				BABC4391235A2EEE00D6EDDB /* Assets.xcassets */,
+				BABC4393235A2EEE00D6EDDB /* LaunchScreen.storyboard */,
+				BABC4396235A2EEE00D6EDDB /* Info.plist */,
+			);
+			path = RidiculusFish;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BABC4380235A2EE900D6EDDB /* RidiculusFish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BABC4399235A2EEE00D6EDDB /* Build configuration list for PBXNativeTarget "RidiculusFish" */;
+			buildPhases = (
+				BABC437D235A2EE900D6EDDB /* Sources */,
+				BABC437E235A2EE900D6EDDB /* Frameworks */,
+				BABC437F235A2EE900D6EDDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RidiculusFish;
+			productName = RidiculusFish;
+			productReference = BABC4381235A2EE900D6EDDB /* RidiculusFish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BABC4379235A2EE900D6EDDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Himanshu Mehta";
+				TargetAttributes = {
+					BABC4380235A2EE900D6EDDB = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = BABC437C235A2EE900D6EDDB /* Build configuration list for PBXProject "RidiculusFish" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BABC4378235A2EE900D6EDDB;
+			productRefGroup = BABC4382235A2EE900D6EDDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BABC4380235A2EE900D6EDDB /* RidiculusFish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BABC437F235A2EE900D6EDDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BABC4390235A2EE900D6EDDB /* Main.storyboard in Resources */,
+				BABC4387235A2EE900D6EDDB /* GameScene.sks in Resources */,
+				BABC4392235A2EEE00D6EDDB /* Assets.xcassets in Resources */,
+				BABC4395235A2EEE00D6EDDB /* LaunchScreen.storyboard in Resources */,
+				BABC4389235A2EE900D6EDDB /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BABC437D235A2EE900D6EDDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BABC438B235A2EE900D6EDDB /* GameScene.swift in Sources */,
+				BABC438D235A2EE900D6EDDB /* GameViewController.swift in Sources */,
+				BABC4385235A2EE900D6EDDB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BABC438E235A2EE900D6EDDB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BABC438F235A2EE900D6EDDB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BABC4393235A2EEE00D6EDDB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BABC4394235A2EEE00D6EDDB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BABC4397235A2EEE00D6EDDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BABC4398235A2EEE00D6EDDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BABC439A235A2EEE00D6EDDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RidiculusFish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = himu.RidiculusFish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BABC439B235A2EEE00D6EDDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RidiculusFish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = himu.RidiculusFish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BABC437C235A2EE900D6EDDB /* Build configuration list for PBXProject "RidiculusFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BABC4397235A2EEE00D6EDDB /* Debug */,
+				BABC4398235A2EEE00D6EDDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BABC4399235A2EEE00D6EDDB /* Build configuration list for PBXNativeTarget "RidiculusFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BABC439A235A2EEE00D6EDDB /* Debug */,
+				BABC439B235A2EEE00D6EDDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BABC4379235A2EE900D6EDDB /* Project object */;
+}
