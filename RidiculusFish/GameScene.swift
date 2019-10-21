@@ -53,23 +53,23 @@ class GameScene: SKScene {
            // Add a cat to a static location
 //        let randomfish = ["fish1","fish2","fish3","fish4","fish5","fish6","fish7","fish8"]
         let randomFishIndex = Int(CGFloat.random(in: 1 ... 8))
-        let cat:SKSpriteNode = SKSpriteNode(imageNamed: "fish\(randomFishIndex)")
+        let fishs:SKSpriteNode = SKSpriteNode(imageNamed: "fish\(randomFishIndex)")
            
            // generate a random x position
            let randomXPos = CGFloat.random(in: -100 ... 0)
            let randomYPos = CGFloat.random(in: 0 ... size.height/2-50)
-           cat.position = CGPoint(x:randomXPos, y:randomYPos)
+           fishs.position = CGPoint(x:randomXPos, y:randomYPos)
         print("fish\([randomFishIndex])")
            
            // add the cat to the screen
-           addChild(cat)
+           addChild(fishs)
            
            // add the cat to the array
-           self.fish.append(cat)
+           self.fish.append(fishs)
            
        }
     
-    
+    var catchFish:[SKSpriteNode] = []
     override func update(_ currentTime: TimeInterval) {
         count = count + 1;
 //        print(count)
@@ -92,35 +92,54 @@ class GameScene: SKScene {
         
         for node in fish{
             if(hanger.frame.intersects(node.frame)){
-                flagHanger = true
-                flag = false
+                if(hanger.position.y<size.height/2){
+                    flagHanger = true
+                    flag = false
+                }
             }
             
         }
 //        MARK: hanger moving up direction with fishes
+        
         if (flagHanger == true) {
-            for node in fish{
+            for (index,node) in fish.enumerated() {
                 if(hanger.frame.intersects(node.frame)){
                     node.position.x = hanger.position.x
                     node.position.y = hanger.position.y
+                    self.catchFish.append(node)
+                    print("\(node.texture)")
+                    fish.remove(at: index)
+
                 }
             }
             self.hanger.position.y += 1
+            
+            if (self.hanger.position.y > size.height/2 + 200) {
+                flagHanger = false
+               
+//                print("xxx")
+            }
+                for node in catchFish{
+            //                if(hanger.frame.intersects(node.frame)){
+                                node.position.x = hanger.position.x
+                                node.position.y = hanger.position.y
+            //                    self.catchFish.append(node)
+            //                }
+                        }
 
         }
         
-        
-        
-        
-        
-//        for nde in fish {
-//            if (nde.position.x > size.width) {
-//                nde.position.x = nde.position.x - 2
-//                print("Negative")
-//                print(nde.position.x)
-//
-//            }
+//        if(flagHanger == false){
+            for node in catchFish{
+//                if(hanger.frame.intersects(node.frame)){
+                    node.position.x = hanger.position.x
+                    node.position.y += 1
+//                    self.catchFish.append(node)
+//                }
+            }
 //        }
+        
+        
     
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
