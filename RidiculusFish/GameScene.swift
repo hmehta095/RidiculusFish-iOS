@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var count:Int! = 0
     var scoreLabel: Int! = 0
     var scoreNode: SKLabelNode!
+     var highScore: SKLabelNode!
     var restart: SKLabelNode!
     var play: SKSpriteNode!
     var hanger: SKSpriteNode!
@@ -27,6 +28,7 @@ class GameScene: SKScene {
     var flagup: Bool = false
     var flagdown: Bool = false
     var cnt: Int = 0
+    var hscore: Int = 0
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
@@ -61,6 +63,9 @@ class GameScene: SKScene {
         sky.zPosition = -10
         self.ship = self.childNode(withName: "ship") as! SKSpriteNode
         ship.zPosition = -9
+        
+        self.highScore = self.childNode(withName: "highscore") as! SKLabelNode
+               
        
     }
     
@@ -161,7 +166,7 @@ class GameScene: SKScene {
         if(flagup == true){
             for node in catchFish{
 //                if(){
-                let speedx = CGFloat.random(in: -20 ... 20)
+                let speedx = CGFloat.random(in: -10 ... 10)
                 let speed = CGFloat.random(in: 1 ... 2)
                     node.position.x += speedx
                     node.position.y += speed
@@ -247,6 +252,7 @@ class GameScene: SKScene {
                        catchFish[ind].removeFromParent()
                         scoreLabel += 10;
                         scoreNode.text = "SCORE IS: " + "\(scoreLabel ?? 0)"
+                        
                         print("xxxx")
                         nodeTouched1 = ""
                         nodeTouched1 = atPoint(location).name
@@ -256,11 +262,14 @@ class GameScene: SKScene {
                     }
                 }
             }
+            if scoreLabel >= hscore {
+                highScore.text = "\(hscore)"
+            }
          
         }
         
         
     }
-    
+   
     
 }
