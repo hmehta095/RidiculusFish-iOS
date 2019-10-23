@@ -19,7 +19,9 @@ class GameScene: SKScene {
     var hanger: SKSpriteNode!
     var flag: Bool = false
     var flagHanger: Bool = false
-    
+    var flagup: Bool = false
+    var flagdown: Bool = false
+    var cnt: Int = 0
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
@@ -48,34 +50,44 @@ class GameScene: SKScene {
     
     
     var fish:[SKSpriteNode] = []
-       
-       func spawnfish() {
-           // Add a cat to a static location
-//        let randomfish = ["fish1","fish2","fish3","fish4","fish5","fish6","fish7","fish8"]
+       // MARK: FISH Generation function
+    func spawnfish() {
+        // Add a fish to a static location
+        //        let randomfish = ["fish1","fish2","fish3","fish4","fish5","fish6","fish7","fish8"]
+        cnt = cnt + 1
         let randomFishIndex = Int(CGFloat.random(in: 1 ... 8))
         let fishs:SKSpriteNode = SKSpriteNode(imageNamed: "fish\(randomFishIndex)")
-           
-           // generate a random x position
-           let randomXPos = CGFloat.random(in: -100 ... 0)
-           let randomYPos = CGFloat.random(in: 0 ... size.height/2-50)
-           fishs.position = CGPoint(x:randomXPos, y:randomYPos)
+        
+          cnt = cnt + 1
+            fishs.name = "fishtest\(cnt)"
+        print("fishtest\(cnt)")
+        
+//        fishs.name = "fishtest"
+        // generate a random x position
+        let randomXPos = CGFloat.random(in: -100 ... 0)
+        let randomYPos = CGFloat.random(in: 0 ... size.height/2-50)
+        fishs.position = CGPoint(x:randomXPos, y:randomYPos)
         print("fish\([randomFishIndex])")
-           
-           // add the cat to the screen
-           addChild(fishs)
-           
-           // add the cat to the array
-           self.fish.append(fishs)
-           
-       }
+        
+        // add the cat to the screen
+        addChild(fishs)
+        
+        // add the cat to the array
+        self.fish.append(fishs)
+        
+    }
     
     var catchFish:[SKSpriteNode] = []
+    // MARK: UPDATE Method
     override func update(_ currentTime: TimeInterval) {
+        //MARK
         count = count + 1;
 //        print(count)
         if(count % 200 == 0){
             spawnfish()
         }
+        
+        //MARK: moving the fishes in x direction
         for node in fish {
             
             node.position.x += 1
@@ -89,7 +101,7 @@ class GameScene: SKScene {
             self.hanger.position.y -= 1
             }
         }
-        
+        //MARK: Hanger attaches fishes
         for node in fish{
             if(hanger.frame.intersects(node.frame)){
                 if(hanger.position.y<size.height/2){
@@ -115,6 +127,7 @@ class GameScene: SKScene {
             self.hanger.position.y += 1
             
             if (self.hanger.position.y > size.height/2 + 200) {
+                flagup = true
                 flagHanger = false
                
 //                print("xxx")
@@ -129,16 +142,32 @@ class GameScene: SKScene {
 
         }
         
-//        if(flagHanger == false){
+        if(flagup == true){
             for node in catchFish{
-//                if(hanger.frame.intersects(node.frame)){
-                    node.position.x = hanger.position.x
-                    node.position.y += 1
+//                if(){
+                let speedx = CGFloat.random(in: -20 ... 20)
+                let speed = CGFloat.random(in: 1 ... 2)
+                    node.position.x += speedx
+                    node.position.y += speed
 //                    self.catchFish.append(node)
 //                }
             }
-//        }
+        }
         
+        for node in catchFish{
+            let fishReturn = CGFloat.random(in: 100 ... 200)
+            if(node.position.y > size.height ){
+                flagup = false
+                flagdown = true
+            }
+        }
+        
+        if(flagdown == true){
+            for node in catchFish{
+            node.position.y -= 1
+//                print("\(node.position.y)")
+            }
+        }
         
     
     }
@@ -154,33 +183,91 @@ class GameScene: SKScene {
             hanger.position.x -= 15
         }
         else  if (mousePosition.x > middleOfScreenWidth && mousePosition.y < middleOfScreenHeight){
-            print("Move right")
+        print("Move right")
             hanger.position.x += 15
         }
         
         let mouseTouch = touches.first
-               if(mouseTouch==nil){
-                   return
-               }
-               
-               let location = mouseTouch!.location(in: self)
-               
-               let nodeTouched = atPoint(location).name
-               print("Player touched: \(nodeTouched)")
-           
-           
-           if (nodeTouched == "play"){
-           print("play button pressed")
+        if(mouseTouch==nil){
+            return
+        }
+        
+        let location = mouseTouch!.location(in: self)
+        
+        var nodeTouched = atPoint(location).name
+       // print("Player touched: \(nodeTouched)")
+        
+        
+        if (nodeTouched == "play"){
+            print("play button pressed")
             self.play.removeFromParent()
             flag = true
-           }
+        }
+        //        let mouseXPosition = location.x
+        //        let mouseYPosition = location.y
+        //
+        //        if (nodeTouched == "tree") {
+        //            spawnOrange(x: mouseXPosition, y: mouseYPosition)
+        //        }
         
+        for (ind,node) in catchFish.enumerated()
+        {
+            
+            
+            var nodeTouched1 = atPoint(location).name
+            print("Touch: \(nodeTouched1)")
+            print("node frame: \(node.name)")
+            
+            for index in 1...cnt {
+             if(nodeTouched1 == "fishtest\(index)" )
+                {
+                    if(hanger.position.y > size.height/2){
+                       catchFish[ind].removeFromParent()
+                        catchFish.popLast()
+                        print("xxxx")
+                        nodeTouched1 = ""
+                        nodeTouched1 = atPoint(location).name
+                        
+                        print("n: \(nodeTouched1)")
+                        
+                    }
+                }
+            }
+         continue
+        }
         
         
     }
     
     
    
-    
+//    func spawnOrange(x:CGFloat, y:CGFloat) {
+//
+//        // DRAW THE ORANGE
+//        //------------------------------
+//        // 1. make an orange
+//        let orange = SKSpriteNode(imageNamed: "Orange")
+//        // 2. Position the orange on the scren
+//        orange.position.x = x
+//        orange.position.y = y
+//        // 3. Force orange to always appear in foreground
+//        orange.zPosition = 999
+//
+//        // 4. show the orange on screen
+//        addChild(orange)
+//
+//        // ADD PHYSICS TO THE ORANGE
+//        // ---------------------------
+//        // 1. Give the orange a physics body
+//        orange.physicsBody = SKPhysicsBody(circleOfRadius: orange.size.width / 2)
+//        // 2. Give orange gravity. By default, orange is affected by gravity.
+//        // orange.physicsBody?.affectedByGravity = true
+//        // 3. Set category, collision, and contact bit masks
+//        //  - By default, collison = everything, contact = 0
+//        orange.physicsBody?.categoryBitMask = 1
+//        orange.physicsBody?.contactTestBitMask = 0
+//
+//        orange.physicsBody?.restitution = 1
+//    }
     
 }
