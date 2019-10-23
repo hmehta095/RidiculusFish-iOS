@@ -14,9 +14,12 @@ class GameScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     var bushes: SKSpriteNode!
+    var sky: SKSpriteNode!
+    var ship: SKSpriteNode!
     var count:Int! = 0
     var scoreLabel: Int! = 0
     var scoreNode: SKLabelNode!
+    var restart: SKLabelNode!
     var play: SKSpriteNode!
     var hanger: SKSpriteNode!
     var flag: Bool = false
@@ -51,7 +54,14 @@ class GameScene: SKScene {
         play.zPosition = 999
         self.scoreNode = self.childNode(withName: "score") as! SKLabelNode
         scoreNode.text = "\(scoreLabel ?? 0)"
-        scoreNode.zPosition = 999
+        scoreNode.zPosition = 998
+        
+        self.restart = self.childNode(withName: "restart") as! SKLabelNode
+        self.sky = self.childNode(withName: "sky") as! SKSpriteNode
+        sky.zPosition = -10
+        self.ship = self.childNode(withName: "ship") as! SKSpriteNode
+        ship.zPosition = -9
+       
     }
     
     
@@ -202,8 +212,14 @@ class GameScene: SKScene {
         
         var nodeTouched = atPoint(location).name
        // print("Player touched: \(nodeTouched)")
-        
-        
+        if (nodeTouched == "restart") {
+            if let scene = SKScene(fileNamed: "GameScene"){
+                            scene.scaleMode = .aspectFill
+                            
+            //                nice way to flip to next level
+                            self.view?.presentScene(scene,transition: SKTransition.flipVertical(withDuration: 2.5))
+        }
+        }
         if (nodeTouched == "play"){
             print("play button pressed")
             self.play.removeFromParent()
