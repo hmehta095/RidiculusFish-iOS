@@ -15,6 +15,8 @@ class GameScene: SKScene {
     var graphs = [String : GKGraph]()
     var bushes: SKSpriteNode!
     var count:Int! = 0
+    var scoreLabel: Int! = 0
+    var scoreNode: SKLabelNode!
     var play: SKSpriteNode!
     var hanger: SKSpriteNode!
     var flag: Bool = false
@@ -45,7 +47,11 @@ class GameScene: SKScene {
         
         self.hanger = self.childNode(withName: "hanger") as! SKSpriteNode
         self.play = self.childNode(withName: "play") as! SKSpriteNode
+        
         play.zPosition = 999
+        self.scoreNode = self.childNode(withName: "score") as! SKLabelNode
+        scoreNode.text = "\(scoreLabel ?? 0)"
+        scoreNode.zPosition = 999
     }
     
     
@@ -223,7 +229,8 @@ class GameScene: SKScene {
                 {
                     if(hanger.position.y > size.height/2){
                        catchFish[ind].removeFromParent()
-                        catchFish.popLast()
+                        scoreLabel += 10;
+                        scoreNode.text = "SCORE IS: " + "\(scoreLabel ?? 0)"
                         print("xxxx")
                         nodeTouched1 = ""
                         nodeTouched1 = atPoint(location).name
@@ -233,41 +240,11 @@ class GameScene: SKScene {
                     }
                 }
             }
-         continue
+         
         }
         
         
     }
     
-    
-   
-//    func spawnOrange(x:CGFloat, y:CGFloat) {
-//
-//        // DRAW THE ORANGE
-//        //------------------------------
-//        // 1. make an orange
-//        let orange = SKSpriteNode(imageNamed: "Orange")
-//        // 2. Position the orange on the scren
-//        orange.position.x = x
-//        orange.position.y = y
-//        // 3. Force orange to always appear in foreground
-//        orange.zPosition = 999
-//
-//        // 4. show the orange on screen
-//        addChild(orange)
-//
-//        // ADD PHYSICS TO THE ORANGE
-//        // ---------------------------
-//        // 1. Give the orange a physics body
-//        orange.physicsBody = SKPhysicsBody(circleOfRadius: orange.size.width / 2)
-//        // 2. Give orange gravity. By default, orange is affected by gravity.
-//        // orange.physicsBody?.affectedByGravity = true
-//        // 3. Set category, collision, and contact bit masks
-//        //  - By default, collison = everything, contact = 0
-//        orange.physicsBody?.categoryBitMask = 1
-//        orange.physicsBody?.contactTestBitMask = 0
-//
-//        orange.physicsBody?.restitution = 1
-//    }
     
 }
