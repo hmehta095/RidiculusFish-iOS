@@ -28,7 +28,7 @@ class GameScene: SKScene {
     var flagup: Bool = false
     var flagdown: Bool = false
     var cnt: Int = 0
-    var hscore: Int = 0
+    var hscore: Int = UserDefaults.standard.object(forKey: "hscore") as! Int
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
@@ -65,7 +65,10 @@ class GameScene: SKScene {
         ship.zPosition = -9
         
         self.highScore = self.childNode(withName: "highscore") as! SKLabelNode
-               
+        if let x = UserDefaults.standard.object(forKey: "hscore")
+        {
+            highScore.text = "\(x)"
+        }
        
     }
     
@@ -263,6 +266,8 @@ class GameScene: SKScene {
                 }
             }
             if scoreLabel >= hscore {
+                hscore = scoreLabel
+                UserDefaults.standard.set(hscore, forKey: "hscore")
                 highScore.text = "\(hscore)"
             }
          
