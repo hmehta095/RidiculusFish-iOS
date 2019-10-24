@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA36A0D823623C970089FF64 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA36A0D723623C970089FF64 /* music.mp3 */; };
 		BABC4385235A2EE900D6EDDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC4384235A2EE900D6EDDB /* AppDelegate.swift */; };
 		BABC4387235A2EE900D6EDDB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BABC4386235A2EE900D6EDDB /* GameScene.sks */; };
 		BABC4389235A2EE900D6EDDB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BABC4388235A2EE900D6EDDB /* Actions.sks */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA36A0D723623C970089FF64 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		BABC4381235A2EE900D6EDDB /* RidiculusFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RidiculusFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABC4384235A2EE900D6EDDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABC4386235A2EE900D6EDDB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				BABC4386235A2EE900D6EDDB /* GameScene.sks */,
 				BABC4388235A2EE900D6EDDB /* Actions.sks */,
 				BABC438A235A2EE900D6EDDB /* GameScene.swift */,
+				BA36A0D723623C970089FF64 /* music.mp3 */,
 				BABC438C235A2EE900D6EDDB /* GameViewController.swift */,
 				BABC438E235A2EE900D6EDDB /* Main.storyboard */,
 				BABC4391235A2EEE00D6EDDB /* Assets.xcassets */,
@@ -133,6 +136,7 @@
 			files = (
 				BABC4390235A2EE900D6EDDB /* Main.storyboard in Resources */,
 				BABC4387235A2EE900D6EDDB /* GameScene.sks in Resources */,
+				BA36A0D823623C970089FF64 /* music.mp3 in Resources */,
 				BABC4392235A2EEE00D6EDDB /* Assets.xcassets in Resources */,
 				BABC4395235A2EEE00D6EDDB /* LaunchScreen.storyboard in Resources */,
 				BABC4389235A2EE900D6EDDB /* Actions.sks in Resources */,

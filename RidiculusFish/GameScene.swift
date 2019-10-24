@@ -8,6 +8,9 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
+
+var player: AVAudioPlayer?
 
 class GameScene: SKScene {
     
@@ -19,7 +22,7 @@ class GameScene: SKScene {
     var count:Int! = 0
     var scoreLabel: Int! = 0
     var scoreNode: SKLabelNode!
-     var highScore: SKLabelNode!
+    var highScore: SKLabelNode!
     var restart: SKLabelNode!
     var play: SKSpriteNode!
     var hanger: SKSpriteNode!
@@ -29,6 +32,9 @@ class GameScene: SKScene {
     var flagdown: Bool = false
     var cnt: Int = 0
     var hscore: Int = UserDefaults.standard.object(forKey: "hscore") as! Int
+    var cam = SKCameraNode()
+    var voice = SKAction.playSoundFileNamed("music.mp3", waitForCompletion: false)
+    
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
@@ -53,6 +59,7 @@ class GameScene: SKScene {
         self.hanger = self.childNode(withName: "hanger") as! SKSpriteNode
         self.play = self.childNode(withName: "play") as! SKSpriteNode
         
+        
         play.zPosition = 999
         self.scoreNode = self.childNode(withName: "score") as! SKLabelNode
         scoreNode.text = "\(scoreLabel ?? 0)"
@@ -69,7 +76,9 @@ class GameScene: SKScene {
         {
             highScore.text = "\(x)"
         }
-       
+       cam = childNode(withName: "camera") as! SKCameraNode
+        camera = cam
+        
     }
     
     
@@ -111,6 +120,13 @@ class GameScene: SKScene {
             spawnfish()
         }
         
+//        removing fish from screen if its crossing the greater than width
+        for node in fish{
+            if(node.position.x > size.width){
+                node.removeFromParent();
+            }
+        }
+        
         //MARK: moving the fishes in x direction
         for node in fish {
             
@@ -123,6 +139,11 @@ class GameScene: SKScene {
         if(flag == true){
             if(hanger.position.y>0){
             self.hanger.position.y -= 1
+//                cam.position = CGPoint(x: hanger.position.x , y: hanger.position.y)
+                run(voice)
+//                if (currentTime > 5){
+//                    run(voice.stop())
+//                }
             }
         }
         //MARK: Hanger attaches fishes
@@ -131,6 +152,7 @@ class GameScene: SKScene {
                 if(hanger.position.y<size.height/2){
                     flagHanger = true
                     flag = false
+//                    stop(voice)
                 }
             }
             
@@ -211,6 +233,7 @@ class GameScene: SKScene {
             hanger.position.x += 15
         }
         
+        
         let mouseTouch = touches.first
         if(mouseTouch==nil){
             return
@@ -229,6 +252,19 @@ class GameScene: SKScene {
         }
         }
         if (nodeTouched == "play"){
+//            let url = NSBundle.mainBundle().URLForResource("soundName", withExtension: "mp3")!
+//
+//            do {
+//                player = try AVAudioPlayer(contentsOfURL: url)
+//                guard let player = player else { return }
+//
+//                player.prepareToPlay()
+//                player.play()
+//
+//            } catch let error as NSError {
+//                print(error.description)
+//            }
+            
             print("play button pressed")
             self.play.removeFromParent()
             flag = true
